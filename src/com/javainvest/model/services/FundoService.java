@@ -25,6 +25,10 @@ public class FundoService {
 			System.out.println("Digite o valor a ser investido (ou 0 para cancelar): ");
 			valor = read.nextDouble();
 			
+			if (valor == 0) {
+				break;
+			}
+			
 			if (valor < valorMinimo || valor < 0) {
 				System.out.println("Valor inválido, tente novamente:");	
 			}
@@ -33,7 +37,7 @@ public class FundoService {
 				System.out.println("Saldo insuficiente, digite outro valor:");
 			}
 			
-		} while (valor < valorMinimo || valor < 0 || valor > Programa.loggedUser.getSaldo());
+		} while (valor < valorMinimo || valor > Programa.loggedUser.getSaldo());
 		
 		if (valor > 0) {
 			Fundo fundo = new Fundo(nome, taxa, valor, data);
