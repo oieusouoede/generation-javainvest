@@ -48,6 +48,9 @@ public class MenuPrincipal {
 		
 		System.out.println("\nMeu saldo:");
 		System.out.printf("Seu saldo atual: R$%.2f", Programa.loggedUser.getSaldo());		
+	
+		System.out.println("\nPoupança:");
+		System.out.printf("Saldo da poupança: R$%.2f, rendimento em 12 meses: R$%.2f", Programa.loggedUser.getSaldoPoupanca(), Programa.loggedUser.getRendimento());
 	}
 
 }

@@ -2,6 +2,8 @@ package com.javainvest.view;
 
 import java.util.Scanner;
 
+import com.javainvest.model.services.UsuarioService;
+
 public class Investimentos {
 	
 	private static Scanner read = new Scanner(System.in);
@@ -25,7 +27,7 @@ public class Investimentos {
 				TelaRendaFixa.menuRendaFixa();
 				break;
 			case 3:
-				
+				UsuarioService.poupanca();
 				break;
 			case 4:
 				System.out.println("Cancelando operação");

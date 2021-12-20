@@ -10,10 +10,10 @@ public class UsuarioHelper {
 	List<Usuario> usuarios = new ArrayList<Usuario>();
 	
 	public void init() {
-		usuarios.add(new Usuario(1,"Vladmir","vlad", 1234,100.0));
-		usuarios.add(new Usuario(2,"Mario","mario", 1234,2000.0));
-		usuarios.add(new Usuario(3,"Antonio","toninho",1234,3000.0));
-		usuarios.add(new Usuario(4,"Walter","valtinho",1234,222.0));
+		usuarios.add(new Usuario(1,"Vladmir","vlad", 1234,100.0, 0.0));
+		usuarios.add(new Usuario(2,"Mario","mario", 1234,2000.0, 0.0));
+		usuarios.add(new Usuario(3,"Antonio","toninho",1234,3000.0, 0.0));
+		usuarios.add(new Usuario(4,"Walter","valtinho",1234,222.0, 0.0));
 	}
 
 

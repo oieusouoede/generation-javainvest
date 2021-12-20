@@ -35,5 +35,18 @@ public class UsuarioService {
 		Programa.loggedUser.sacar(saque);
 		MenuPrincipal.menuPrincipal();
 	}
+	
+	public static void poupanca() {
+					
+		System.out.println("\n          INVESTIMENTO POUPANÇA          \n");
+		System.out.print("\nQuanto deseja investir? (Valor mínimo R$50,00)");
+		double valorInvestido = in.nextDouble();
+		if (valorInvestido < 50){
+			System.out.println("Valor inválido!");
+		} else {
+			Programa.loggedUser.investirPoupanca(valorInvestido);
+		}
+		MenuPrincipal.menuPrincipal();	
+	}
 
 }

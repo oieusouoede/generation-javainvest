@@ -10,15 +10,18 @@ public class Usuario {
 	private String login;
 	private Integer password;
 	private Double saldo;
+	private Double saldoPoupanca;
+	
 	private List <Fundo> fundos = new ArrayList<>();
 	
-	public Usuario(Integer id, String nome, String login, Integer password, Double saldo) {
+	public Usuario(Integer id, String nome, String login, Integer password, Double saldo, Double saldoPoupanca) {
 
 		this.id = id;
 		this.nome = nome;
 		this.login = login;
 		this.password = password;
 		this.saldo = saldo;
+		this.saldoPoupanca = saldoPoupanca;
 	}
 	
 	public Usuario(String nome, String login, Integer password) {
@@ -27,6 +30,8 @@ public class Usuario {
 		this.login = login;
 		this.password = password;
 		this.saldo = 0.0;
+		this.saldoPoupanca = 0.0;
+		
 	}
 
 	public Integer getId() {
@@ -69,12 +74,29 @@ public class Usuario {
 		this.saldo = saldo;
 	}
 	
+	public Double getSaldoPoupanca() {
+		return saldoPoupanca;
+	}
+	
+	public Double getRendimento() {		
+		return getSaldoPoupanca() * 0.02 * 12;
+	}
+
+	public void setSaldoPoupanca(Double saldoPoupanca) {
+		this.saldoPoupanca = saldoPoupanca;
+	}
+
 	public void depositar(double valor) {
 		setSaldo(saldo + valor);
 	}
 	
 	public void sacar(double valor) {
 		setSaldo(saldo - valor);
+	}
+	
+	public void investirPoupanca(double valor) {
+		setSaldo(saldo - valor);
+		setSaldoPoupanca(saldoPoupanca += valor);
 	}
 
 	public void addFundo(Fundo fundo) {
